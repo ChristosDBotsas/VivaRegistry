@@ -2,3 +2,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+
+<h2>Welcome to Viva Registry:</h2>
+@Html.ActionLink("Create a new Application", "Create", "Applications", new { area = ""}, null)
+@Html.ActionLink("View existing Applications", "Index", "Applications", new { area = ""}, null)

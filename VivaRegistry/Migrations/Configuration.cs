@@ -2,22 +2,20 @@ namespace VivaRegistry.Migrations
 {
     using Models;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<VivaRegistry.Models.VivaRegistryContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<VivaRegistryContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(VivaRegistry.Models.VivaRegistryContext context)
+        protected override void Seed(VivaRegistryContext context)
         {
             context.Applications.AddOrUpdate(
                 x => x.ApplicationName,
-                new Application { ApplicationName = "Wallet", ApplicationKey = 12491, CreationDate = DateTime.Now}
+                new Application { ApplicationName = "Wallet", CreationDate = DateTime.Now}
             );
             context.LogLevels.AddOrUpdate(
                 x => x.LogLevelName,

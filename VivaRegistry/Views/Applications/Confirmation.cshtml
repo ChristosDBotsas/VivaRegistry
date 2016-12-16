@@ -1,0 +1,15 @@
+﻿@model VivaRegistry.Models.Application
+
+@{
+    ViewBag.Title = "Confirmation";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div id="ConfirmationInfo">
+    <p>
+        The app was successfully created. The Application Key is: @Html.DisplayFor(model => model.ApplicationId)<text>.</text>
+    </p>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

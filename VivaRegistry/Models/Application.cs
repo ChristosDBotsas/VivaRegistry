@@ -9,7 +9,6 @@ namespace VivaRegistry.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ApplicationId { get; set; }
-        public int ApplicationKey { get; set; }
         [MaxLength]
         public string ApplicationName { get; set; }
         public DateTime CreationDate { get; set; }

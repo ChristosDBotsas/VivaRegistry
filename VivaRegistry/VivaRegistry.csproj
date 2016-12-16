@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -114,6 +115,10 @@
     <Compile Include="Migrations\201612161151505_TestData.cs" />
     <Compile Include="Migrations\201612161151505_TestData.Designer.cs">
       <DependentUpon>201612161151505_TestData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161502051_DeleteKeyColumn.cs" />
+    <Compile Include="Migrations\201612161502051_DeleteKeyColumn.Designer.cs">
+      <DependentUpon>201612161502051_DeleteKeyColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
@@ -129,6 +134,10 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Applications\Create.cshtml" />
+    <Content Include="Views\Applications\Details.cshtml" />
+    <Content Include="Views\Applications\Index.cshtml" />
+    <Content Include="Views\Applications\Confirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612161151505_TestData.resx">
       <DependentUpon>201612161151505_TestData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161502051_DeleteKeyColumn.resx">
+      <DependentUpon>201612161502051_DeleteKeyColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
