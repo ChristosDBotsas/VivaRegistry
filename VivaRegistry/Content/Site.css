@@ -1,0 +1,11 @@
+﻿#PageHeader{
+    display:flex;
+    background-color:#00008b;
+    color:#fff;
+    justify-content:center;
+    padding-bottom:10px;
+    width:100%;
+}
+
+body {
+}
