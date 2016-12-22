@@ -105,6 +105,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -138,6 +139,8 @@
     <Content Include="Views\Applications\Details.cshtml" />
     <Content Include="Views\Applications\Index.cshtml" />
     <Content Include="Views\Applications\Confirmation.cshtml" />
+    <Content Include="Views\Events\Delete.cshtml" />
+    <Content Include="Views\Events\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

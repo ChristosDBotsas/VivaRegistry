@@ -10,24 +10,52 @@
 <div>
     <h4>Application</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationName)
-        </dt>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationName)
-        </dd>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.ApplicationName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CreationDate)
+            </td>
+        </tr>
+        
+        @foreach (var e in Model.Events)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayName(nameof(e.EventId))
+                </th>
+                <th>
+                    @Html.DisplayName(nameof(e.EventGenerationDate))
+                </th>
+            </tr>
+            <tr>
+               <td>
+                   @Html.Display(e.EventId.ToString())
+               </td> 
+               <td>
+                   @Html.Display(e.EventGenerationDate.ToString())
+               </td>
+               <td>
+                   @Html.ActionLink("Edit", "Edit", "Events", new { id = e.EventId }, null)
+               </td>
+               <td>
+                   @Html.ActionLink("Delete", "Delete", "Events", new { id = e.EventId }, null)
+               </td>
+            </tr>
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-
-    </dl>
+    </table>
     <dl class="dl-horizontal">
         <dt></dt>
     </dl>
