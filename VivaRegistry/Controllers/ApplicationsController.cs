@@ -46,7 +46,7 @@ namespace VivaRegistry.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ApplicationId,ApplicationName,CreationDate")] Application application)
+        public ActionResult Create([Bind(Include = "ApplicationId,ApplicationKey,ApplicationEmail,ApplicationName,CreationDate")] Application application)
         {
             if (ModelState.IsValid)
             {

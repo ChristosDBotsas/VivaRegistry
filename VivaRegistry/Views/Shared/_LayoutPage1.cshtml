@@ -2,20 +2,22 @@
 
 <html>
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css"/>
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderPage("~/Views/Shared/_Header.cshtml")
-    </div>
-    <div>
+    @RenderPage("~/Views/Shared/_Header.cshtml")
+    <div class="container body-content">
         @RenderBody()
     </div>
     <hr />
     <div>
         @RenderPage("~/Views/Shared/_Footer.cshtml")
     </div>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
