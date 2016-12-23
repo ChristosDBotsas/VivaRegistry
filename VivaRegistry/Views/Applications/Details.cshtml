@@ -39,9 +39,6 @@
             <td>
                 @Html.DisplayFor(model => model.ApplicationEmail)
             </td>
-            <td>
-                @Html.ActionLink("Create New Event", "Create", "Events", new { id = Model.ApplicationId}, null)
-            </td>
         </tr>
         
         @foreach (var e in Model.Events)
@@ -76,5 +73,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" }) | @Html.ActionLink("Create New Event", "Create", "Events", new { id = Model.ApplicationId }, new { @class = "btn btn-primary"})
 </p>

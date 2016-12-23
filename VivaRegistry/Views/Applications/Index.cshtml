@@ -30,7 +30,7 @@
             @Html.DisplayFor(modelItem => item.CreationDate)
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.ApplicationId })
+            @Html.ActionLink("Details", "Details", new { id=item.ApplicationId }, new { @class = "btn btn-primary"})
         </td>
     </tr>
 }
