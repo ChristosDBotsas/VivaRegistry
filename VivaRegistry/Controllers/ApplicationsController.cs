@@ -21,7 +21,7 @@ namespace VivaRegistry.Controllers
         }
 
         // GET: Applications/Details/5
-        public ActionResult Details(Guid? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
