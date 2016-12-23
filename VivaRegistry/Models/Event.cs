@@ -9,7 +9,7 @@ namespace VivaRegistry.Models
         [Key]
         public int EventId { get; set; }
         public DateTime EventGenerationDate { get; set; }
-        public Guid AppId { get; set; }
+        public int AppId { get; set; }
         public int LogId { get; set; }
         [ForeignKey("AppId")]
         public virtual Application Application { get; set; }

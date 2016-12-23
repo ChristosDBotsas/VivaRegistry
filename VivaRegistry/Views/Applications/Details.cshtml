@@ -13,19 +13,34 @@
     <table class="table">
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ApplicationKey)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ApplicationName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreationDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationEmail)
+            </th>
         </tr>
 
         <tr>
+            <td>
+                @Html.DisplayFor(model => model.ApplicationKey)
+            </td>
             <td>
                 @Html.DisplayFor(model => model.ApplicationName)
             </td>
             <td>
                 @Html.DisplayFor(model => model.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ApplicationEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Create New Event", "Create", "Events", new { id = Model.ApplicationId}, null)
             </td>
         </tr>
         
@@ -41,10 +56,10 @@
             </tr>
             <tr>
                <td>
-                   @Html.Display(e.EventId.ToString())
+                   @Html.DisplayName(e.EventId.ToString())
                </td> 
                <td>
-                   @Html.Display(e.EventGenerationDate.ToString())
+                   @Html.DisplayName(e.EventGenerationDate.ToString())
                </td>
                <td>
                    @Html.ActionLink("Edit", "Edit", "Events", new { id = e.EventId }, null)

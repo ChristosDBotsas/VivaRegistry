@@ -121,6 +121,10 @@
     <Compile Include="Migrations\201612161502051_DeleteKeyColumn.Designer.cs">
       <DependentUpon>201612161502051_DeleteKeyColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612230928250_ApplicationUpdate.cs" />
+    <Compile Include="Migrations\201612230928250_ApplicationUpdate.Designer.cs">
+      <DependentUpon>201612230928250_ApplicationUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Event.cs" />
@@ -141,6 +145,7 @@
     <Content Include="Views\Applications\Confirmation.cshtml" />
     <Content Include="Views\Events\Delete.cshtml" />
     <Content Include="Views\Events\Edit.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612161502051_DeleteKeyColumn.resx">
       <DependentUpon>201612161502051_DeleteKeyColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612230928250_ApplicationUpdate.resx">
+      <DependentUpon>201612230928250_ApplicationUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

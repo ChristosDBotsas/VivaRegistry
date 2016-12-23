@@ -50,7 +50,6 @@ namespace VivaRegistry.Controllers
         {
             if (ModelState.IsValid)
             {
-                application.ApplicationId = Guid.NewGuid();
                 application.CreationDate = DateTime.Now;
                 db.Applications.Add(application);
                 db.SaveChanges();

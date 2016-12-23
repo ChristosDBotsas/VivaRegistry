@@ -14,7 +14,29 @@ namespace VivaRegistry.Controllers
     {
         private VivaRegistryContext db = new VivaRegistryContext();
 
-        
+        public ActionResult Create(int id)
+        {
+            ViewBag.App = id;
+            ViewBag.LogId = new SelectList(db.LogLevels.ToList(), "LogLevelId", "LogLevelName", 0);
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "EventId,EventGenerationDate,AppId,LogId")] Event newEvent, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                newEvent.AppId = id;
+                newEvent.EventGenerationDate = DateTime.Now;
+                db.Events.Add(newEvent);
+                db.SaveChanges();
+                return Redirect($"~/Applications/Details/{id}");
+            }
+            ViewBag.App = id;
+            ViewBag.LogId = new SelectList(db.LogLevels.ToList(), "LogLevelId", "LogLevelName", newEvent.LogId);
+            return View(newEvent);
+        }
 
         // GET: Events/Edit/5
         public ActionResult Edit(int? id)
@@ -44,7 +66,7 @@ namespace VivaRegistry.Controllers
             {
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return Redirect($"~/Applications/Details/{@event.AppId}");
             }
             ViewBag.AppId = new SelectList(db.Applications, "ApplicationId", "ApplicationName", @event.AppId);
             ViewBag.LogId = new SelectList(db.LogLevels, "LogLevelId", "LogLevelName", @event.LogId);
@@ -67,14 +89,14 @@ namespace VivaRegistry.Controllers
         }
 
         // POST: Events/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Event @event = db.Events.Find(id);
             db.Events.Remove(@event);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Redirect($"~/Applications/Details/{@event.AppId}");
         }
 
         protected override void Dispose(bool disposing)

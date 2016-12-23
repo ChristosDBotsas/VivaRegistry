@@ -9,3 +9,7 @@
 
 body {
 }
+table {
+    table-layout:fixed;
+    text-align:center;
+}

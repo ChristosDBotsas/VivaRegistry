@@ -16,7 +16,13 @@ namespace VivaRegistry.Migrations
         {
             context.Applications.AddOrUpdate(
                 x => x.ApplicationName,
-                new Application { ApplicationName = "Wallet", CreationDate = DateTime.Now }
+                new Application
+                {
+                    ApplicationName = "Wallet",
+                    CreationDate = DateTime.Now,
+                    ApplicationKey = "21EC2020 - 3AEA - 4069 - A2DD - 08002B30309D",
+                    ApplicationEmail = "wallet@vivawallet.com"
+                }
             );
             context.LogLevels.AddOrUpdate(
                 x => x.LogLevelName,
