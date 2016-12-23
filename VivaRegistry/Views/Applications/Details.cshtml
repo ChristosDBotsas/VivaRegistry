@@ -41,35 +41,38 @@
             </td>
         </tr>
     </table>
-    <table class="table table-bordered">
-        <tr>
-            <th>Event ID</th>
-            <th>Generation Date</th>
-            <th>Log Level</th>
-            <th>Edit Event</th>
-            <th>Delete Event</th>
-        </tr>
-        @foreach (var e in Model.Events)
-        {
+    @if (Model.Events.Count > 0)
+    {
+        <table class="table table-bordered">
             <tr>
-                <td>
-                    @Html.DisplayName(e.EventId.ToString())
-                </td>
-                <td>
-                    @Html.DisplayName(e.EventGenerationDate.ToString())
-                </td>
-                <td>
-                    @Html.DisplayName(e.LogId.ToString())
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", "Events", new { id = e.EventId }, new { @class = "btn btn-success" })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", "Events", new { id = e.EventId }, new { @class = "btn btn-danger" })
-                </td>
+                <th>Event ID</th>
+                <th>Generation Date</th>
+                <th>Log Level</th>
+                <th>Edit Event</th>
+                <th>Delete Event</th>
             </tr>
-        }
-    </table>
+            @foreach (var e in Model.Events)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayName(e.EventId.ToString())
+                    </td>
+                    <td>
+                        @Html.DisplayName(e.EventGenerationDate.ToString())
+                    </td>
+                    <td>
+                        @Html.DisplayName(e.LogId.ToString())
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Events", new { id = e.EventId }, new { @class = "btn btn-success" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", "Events", new { id = e.EventId }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" }) @Html.ActionLink("Create New Event", "Create", "Events", new { id = Model.ApplicationId }, new { @class = "btn btn-primary"})

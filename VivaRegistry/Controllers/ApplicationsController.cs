@@ -38,6 +38,10 @@ namespace VivaRegistry.Controllers
         // GET: Applications/Create
         public ActionResult Create()
         {
+            if (TempData["ErrMsg"] != null)
+            {
+                ViewBag.Message = TempData["ErrMsg"].ToString();
+            }
             return View();
         }
 
@@ -50,10 +54,19 @@ namespace VivaRegistry.Controllers
         {
             if (ModelState.IsValid)
             {
-                application.CreationDate = DateTime.Now;
-                db.Applications.Add(application);
-                db.SaveChanges();
-                return RedirectToAction("Confirmation", application);
+                Application duplicate = db.Applications.Where(x => x.ApplicationKey == application.ApplicationKey).FirstOrDefault();
+                if (duplicate != null)
+                {
+                    TempData["ErrMsg"] = "You have entered a duplicate key value, please try again.";
+                    return RedirectToAction("Create");
+                }
+                else
+                {
+                    application.CreationDate = DateTime.Now;
+                    db.Applications.Add(application);
+                    db.SaveChanges();
+                    return RedirectToAction("Confirmation", application);
+                }
             }
 
             return View(application);
