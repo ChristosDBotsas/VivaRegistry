@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,5 +20,6 @@ namespace VivaRegistry.Models
         public virtual Application Application { get; set; }
         [ForeignKey("LogId")]
         public virtual LogLevel LogLevel { get; set; }
+        public virtual ICollection<GroupEvent> GroupEvent { get; set; }
     }
 }

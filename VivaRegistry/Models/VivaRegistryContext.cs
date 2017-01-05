@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace VivaRegistry.Models
 {
@@ -16,6 +12,7 @@ namespace VivaRegistry.Models
         public DbSet<LogLevel> LogLevels { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet<GroupEvent> GroupEvent { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
