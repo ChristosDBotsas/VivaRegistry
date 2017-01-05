@@ -15,6 +15,7 @@ namespace VivaRegistry.Models
         public DbSet<Application> Applications { get; set; }
         public DbSet<LogLevel> LogLevels { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

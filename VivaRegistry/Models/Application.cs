@@ -19,5 +19,6 @@ namespace VivaRegistry.Models
         [Display(Name = "Creation Date")]
         public DateTime CreationDate { get; set; }
         public virtual ICollection<Event> Events { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

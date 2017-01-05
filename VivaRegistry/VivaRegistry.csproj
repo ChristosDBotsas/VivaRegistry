@@ -137,9 +137,14 @@
     <Compile Include="Migrations\201612230928250_ApplicationUpdate.Designer.cs">
       <DependentUpon>201612230928250_ApplicationUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701050840445_AddGroupsTable.cs" />
+    <Compile Include="Migrations\201701050840445_AddGroupsTable.Designer.cs">
+      <DependentUpon>201701050840445_AddGroupsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Group.cs" />
     <Compile Include="Models\LogLevel.cs" />
     <Compile Include="Models\VivaRegistryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612230928250_ApplicationUpdate.resx">
       <DependentUpon>201612230928250_ApplicationUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701050840445_AddGroupsTable.resx">
+      <DependentUpon>201701050840445_AddGroupsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
